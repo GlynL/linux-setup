@@ -24,8 +24,8 @@ bash lib/ssh.sh
 ## What it does
 
 1. **`lib/packages.sh`** — installs git, curl, wget, build-essential,
-   htop, ripgrep, fzf, jq, tmux, neovim, zsh, oh-my-zsh, nvm, sdkman,
-   and Docker (via Docker's official apt repo); sets zsh as the default
+   htop, ripgrep, fzf, jq, tmux, zsh, oh-my-zsh, nvm, sdkman, and
+   Docker (via Docker's official apt repo); sets zsh as the default
    login shell if it isn't already (idempotent; log out/in required).
 2. **`lib/dotfiles.sh`** — clones/pulls `github.com/GlynL/dotfiles`
    into `~/dotfiles`, symlinks `.zshrc` and `.tmux.conf` into `$HOME`
