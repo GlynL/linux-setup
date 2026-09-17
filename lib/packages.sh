@@ -34,6 +34,16 @@ install_oh_my_zsh() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
+install_fzf() {
+  if [ -d "$HOME/.fzf" ]; then
+    log "fzf already installed, skipping"
+    return 0
+  fi
+  log "Installing fzf"
+  git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/.fzf"
+  "$HOME/.fzf/install" --key-bindings --completion --no-update-rc
+}
+
 install_nvm() {
   if [ -d "$HOME/.nvm" ]; then
     log "nvm already installed, skipping"
@@ -112,6 +122,7 @@ install_all_packages() {
   install_base_packages
   set_default_shell
   install_oh_my_zsh
+  install_fzf
   install_nvm
   install_sdkman
   install_docker
